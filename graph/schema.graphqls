@@ -1,0 +1,72 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type OrderHistory{
+    version:                 Int
+    accountNumber:           String
+    brandName:               String
+    contactEmailAddress:     String
+    contactFaxNumber:        String
+    contactPhoneNumber:      String
+    currency:                String
+    customerUsername:        String
+    deletedFlag:             String
+    deliveryMethod:          String
+    docTyp:                  String
+    extendedItemPrice:       Float
+    freightTerms:            String
+    fuelSurchargeFreight:    Int
+    gcomOrderNumber:         String
+    gsaSchedDesc:            String
+    gsaSchedule:             String
+    higherLevelLineItem:     String
+    id:                      String
+    itemFreight:             Float
+    itemNumber:              String
+    itemShortDesc:           String
+    itemTax:                 Float
+    lastModified:            String
+    lineFreightTerms:        String
+    mfgPartNum:              String
+    orderChannel:            String
+    orderCreatedDateTime:    String
+    orderFreight:            Float
+    orderHeaderFlag:         String
+    orderSubtotal:           Float
+    orderTax:                Float
+    orderTotal:              Float
+    orderedBy:               String
+    origSlsOrdlineItm:       String
+    paymentMethod:           String
+    purchaseOrderLineNumber: String
+    purchaseOrderNumber:     String
+    purchaseOrderType:       String
+    quantity:                Int
+    quoteExpDt:              String
+    requisitionerName:       String
+    sOrg:                    String
+    salesOffice:             String
+    contactID:            String
+    orderLineNumber:      String
+    orderNumber:          String
+    systemTimestamp:      String
+    shipAddress1:            String
+    shipCity:                String
+    shipCompanyName1:        String
+    shipCountry:             String
+    shipPostalCode:          String
+    shipRegion:              String
+    unitPrice:               Float
+    unspsc:                  String
+    zDPPItemCond:            String
+}
+
+type Query {
+    orderHistory(account: UserAccountIds): [OrderHistory]
+}
+
+input UserAccountIds{
+    accountNumber: String!
+    contactId:  String
+}
